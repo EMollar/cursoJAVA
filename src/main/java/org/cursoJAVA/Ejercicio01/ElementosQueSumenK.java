@@ -36,14 +36,15 @@ public class ElementosQueSumenK {
         Result result = new Result();
         result.result = false;
 
-        for(int i = 1; i < lista.size(); i++){
-
-            Integer sum = lista.get(i) + lista.get(i-1);
-            if (Objects.equals(x, sum)) {
-                result.result = true;
-                result.num1 = lista.get(i);
-                result.num2 = lista.get(i-1);
-                break;
+        for(int i = 1; i < lista.size()-1; i++){
+            for(int j = i+1; j < lista.size(); j++) {
+                Integer sum = lista.get(i) + lista.get(j);
+                if (Objects.equals(x, sum)) {
+                    result.result = true;
+                    result.num1 = lista.get(i);
+                    result.num2 = lista.get(j);
+                    break;
+                }
             }
         }
 
